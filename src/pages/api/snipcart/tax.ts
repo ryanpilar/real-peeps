@@ -87,7 +87,7 @@ export default async function handler(
         {
           name: "VAT",
           amount: result.costs.vat,
-          rate: 0,
+          rate: 0.5,
         },
       ],
     });
