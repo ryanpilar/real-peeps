@@ -1,5 +1,9 @@
-import { printful } from "./printful-client";
+/**
+ * This code exports an async function that creates a Printful order based on a Snipcart webhook content
+ * An async function that takes a Snipcart webhook content as input
+ */
 
+import { printful } from "./printful-client";
 import type { SnipcartWebhookContent, PrintfulShippingItem } from "../types";
 
 const createOrder = async ({
@@ -9,6 +13,8 @@ const createOrder = async ({
   items,
   shippingRateUserDefinedId,
 }: SnipcartWebhookContent) => {
+
+  // Create a recipient object from the shipping address and customer email
   const recipient = {
     ...(shippingAddress.name && { name: shippingAddress.name }),
     ...(shippingAddress.address1 && { address1: shippingAddress.address1 }),
@@ -23,6 +29,7 @@ const createOrder = async ({
     email,
   };
 
+  // Create an array of PrintfulShippingItem objects from the cart items
   const printfulItems: PrintfulShippingItem[] = items.map(
     (item): PrintfulShippingItem => ({
       external_variant_id: item.id,
@@ -30,6 +37,7 @@ const createOrder = async ({
     })
   );
 
+  // Call the Printful API to create an order with the provided data
   const { result } = await printful.post("orders", {
     external_id: invoiceNumber,
     recipient,

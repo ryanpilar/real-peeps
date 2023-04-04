@@ -1,0 +1,7 @@
+Things to do before live launch:
+    -   make sure tax amounts are correct
+    -   make sure I am doing the right thing with shipping
+    -   get business name and number
+    -   get GST number
+    -   get seperate bank account
+    -   get seperate credit card
