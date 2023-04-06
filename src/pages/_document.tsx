@@ -9,12 +9,8 @@ class MyDocument extends Document {
           <link rel="preconnect" href="https://cdn.snipcart.com" />
           <link
             rel="stylesheet"
-            href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css"
+            href="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.css"
           />
-          {/* <link rel="preconnect" href="https://app.snipcart.com" />
-          <link rel="preconnect" href="https://cdn.snipcart.com" />
-          <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.2.2/default/snipcart.css" /> */}
-
 
           <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
@@ -26,9 +22,10 @@ class MyDocument extends Document {
           <NextScript />
           <script
             async
-            src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"
+            src="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.js"
           ></script>
-          {/* <script async src="https://cdn.snipcart.com/themes/v3.2.2/default/snipcart.js" /> */}
+          
+          {/* Here, we’re including the Snipcart script that will provide all of our shopping cart's functionality. */}
           <div
             id="snipcart"
             data-config-modal-style="side"
