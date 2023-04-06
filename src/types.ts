@@ -1,3 +1,7 @@
+/**
+    This is TypeScript code that defines several types and interfaces related to the 
+    Snipcart e-commerce platform and the Printful print-on-demand service.
+ */
 import type { NextApiRequest } from "next";
 
 declare global {

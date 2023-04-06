@@ -50,19 +50,19 @@ export default async function handler(
     return res.status(400).json({ message: "This event is not permitted" });
 
   // Verify the request token (commented out for now)
-  if (!token) return res.status(401).json({ message: "Not Authorized" });
-  try {
-    const verifyToken = await fetch(
-      `https://app.snipcart.com/api/requestvalidation/${token}`
-    );
-    if (!verifyToken.ok)
-      return res.status(401).json({ message: "Not Authorization" });
-  } catch (err) {
-    console.log(err);
-    return res
-      .status(500)
-      .json({ message: "Unable to verify Snipcart webhook token" });
-  }
+  // if (!token) return res.status(401).json({ message: "Not Authorized" });
+  // try {
+  //   const verifyToken = await fetch(
+  //     `https://app.snipcart.com/api/requestvalidation/${token}`
+  //   );
+  //   if (!verifyToken.ok)
+  //     return res.status(401).json({ message: "Not Authorization" });
+  // } catch (err) {
+  //   console.log(err);
+  //   return res
+  //     .status(500)
+  //     .json({ message: "Unable to verify Snipcart webhook token" });
+  // }
 
   try {
 
