@@ -5,15 +5,15 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          {/* <link rel="preconnect" href="https://app.snipcart.com" />
+          <link rel="preconnect" href="https://app.snipcart.com" />
           <link rel="preconnect" href="https://cdn.snipcart.com" />
           <link
             rel="stylesheet"
             href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css"
-          /> */}
-          <link rel="preconnect" href="https://app.snipcart.com" />
+          />
+          {/* <link rel="preconnect" href="https://app.snipcart.com" />
           <link rel="preconnect" href="https://cdn.snipcart.com" />
-          <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.2.2/default/snipcart.css" />
+          <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.2.2/default/snipcart.css" /> */}
 
 
           <link
@@ -24,11 +24,11 @@ class MyDocument extends Document {
         <body className="antialiased">
           <Main />
           <NextScript />
-          {/* <script
+          <script
             async
             src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"
-          ></script> */}
-          <script async src="https://cdn.snipcart.com/themes/v3.2.2/default/snipcart.js" />
+          ></script>
+          {/* <script async src="https://cdn.snipcart.com/themes/v3.2.2/default/snipcart.js" /> */}
           <div
             id="snipcart"
             data-config-modal-style="side"

@@ -7,32 +7,43 @@ import useWishlistState from "../hooks/useWishlistState";
 import VariantPicker from "./VariantPicker";
 
 const Product = (product) => {
+
+  // gets the function to add an item to the wishlist
   const { addItem } = useWishlistDispatch();
+  // gets the state to check if the item is already saved in the wishlist
   const { isSaved } = useWishlistState();
 
+
   const { id, name, variants } = product;
+  // gets the first variant from the list
   const [firstVariant] = variants;
+  // checks if there's only one variant
   const oneStyle = variants.length === 1;
 
+  // sets the active variant to the first one
   const [activeVariantExternalId, setActiveVariantExternalId] = useState(
     firstVariant.external_id
   );
 
+  // gets the active variant object based on the active variant external id
   const activeVariant = variants.find(
     (v) => v.external_id === activeVariantExternalId
   );
 
+  // gets the active variant's file with type "preview"
   const activeVariantFile = activeVariant.files.find(
     ({ type }) => type === "preview"
   );
 
-  const formattedPrice = new Intl.NumberFormat("en-US", {
+  // formats the price to show in the CA dollar currency
+  const formattedPrice = new Intl.NumberFormat("en-CA", {
     style: "currency",
     currency: activeVariant.currency,
   }).format(activeVariant.retail_price);
 
+  // adds the product to the wishlist when the user clicks the wishlist button
   const addToWishlist = () => addItem(product);
-
+  // checks if the product is already saved in the wishlist
   const onWishlist = isSaved(id);
 
   return (
@@ -43,6 +54,7 @@ const Product = (product) => {
         onClick={addToWishlist}
       >
         {onWishlist ? (
+          // displays a filled heart icon if the product is already saved in the wishlist
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -52,6 +64,7 @@ const Product = (product) => {
             <path d="M12.001 4.529c2.349-2.109 5.979-2.039 8.242.228 2.262 2.268 2.34 5.88.236 8.236l-8.48 8.492-8.478-8.492c-2.104-2.356-2.025-5.974.236-8.236 2.265-2.264 5.888-2.34 8.244-.228z" />
           </svg>
         ) : (
+          // displays an empty heart icon if the product is not yet saved in the wishlist
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
